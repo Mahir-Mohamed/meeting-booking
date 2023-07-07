@@ -15,9 +15,9 @@ import Sidebar from "../global/Sidebar";
 import QuickLinks from "../../components/QuickLinks"
 import Reservations from "../../components/Reservations"
 import LatestBookings from "../../components/LatestBookings"
-import Random1 from '../../components/Random1';
-import Random3 from '../../components/Random3';
-import Random2 from '../../components/Random2';
+import Random1 from '../../components/ran1';
+import Random3 from '../../components/ran3';
+import Random2 from '../../components/ran2';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -29,8 +29,8 @@ const Dashboard = () => {
   const currDate = new Date().toLocaleDateString();
  const currTime = new Date().toLocaleTimeString();
 
-  const todayBookings = 10; // Replace with actual data
-  const totalBookings = 100; // Replace with actual data
+  const todayBookings = 10; 
+  const totalBookings = 100; 
   const latestBookings = [
     {
       meetingRoom: 'Room A',
@@ -44,7 +44,8 @@ const Dashboard = () => {
       customerName: 'Leo',
       customerId: '124',
     }
-    // Add more bookings
+    
+    
   ];
 
   return (
@@ -69,7 +70,7 @@ const Dashboard = () => {
 
 
 <ColorModeContext.Provider value={colorMode}>
-      {/* <ThemeProvider theme={theme1}> */}
+
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -85,7 +86,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 1"
-          // backgroundColor={colors.blueAccent[700]}
+          
           padding="30px"
         >
           <Typography
@@ -101,7 +102,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 1"
-          // backgroundColor={colors.blueAccent[700]}
+          
           padding="30px"
         >
           <Typography
@@ -117,7 +118,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 1"
-          // backgroundColor={colors.blueAccent[700]}
+          
           padding="30px"
         >
           <Typography
@@ -133,7 +134,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          // backgroundColor={colors.blueAccent[500]}
+          
           padding="30px"
         >
           <Typography
@@ -150,7 +151,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          // backgroundColor={colors.blueAccent[500]}
+          
         >
           <Typography
             variant="h5"
@@ -165,7 +166,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          // backgroundColor={colors.blueAccent[500]}
+          
           padding="30px"
         >
           <Typography
@@ -181,7 +182,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          // backgroundColor={colors.blueAccent[600]}
+          
           padding="30px"
         >
           <Typography
@@ -196,7 +197,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          // backgroundColor={colors.blueAccent[600]}
+          
           padding="30px"
         >
           <Typography
@@ -222,7 +223,7 @@ const Dashboard = () => {
     </Box>
           </main>
         </div>
-      {/* </ThemeProvider> */}
+     
     </ColorModeContext.Provider>
     </Box>
 
