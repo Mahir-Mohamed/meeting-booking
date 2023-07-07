@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "username": "Madhu",
+      "email": "leo@gmail.com",
+      "role": "Admin",
+      "status": "Active",
+      "id": 2,
+      "name": "Leo"
+    },
+    {
+      "username": "Leo",
+      "email": "leo@gmail.com",
+      "password": "leo@123",
+      "role": "user",
+      "id": 3,
+      "status": "active",
+      "name": "madhu"
+    },
+    {
+      "name": "Virat",
+      "email": "Virat@gmail.com",
+      "role": "Admin",
+      "status": "Active",
+      "id": 5
+    },
+    {
+      "name": "Leo123",
+      "email": "123@gmail.com",
+      "role": "user",
+      "status": "active",
+      "id": 6
+    }
+  ]
+}
