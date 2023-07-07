@@ -35,13 +35,13 @@ const Dashboard = () => {
     {
       meetingRoom: 'Room A',
       date: '2023-06-30',
-      customerName: 'Madhu',
+      customerName: 'Mahir',
       customerId: '123',
     },
     {
       meetingRoom: 'Room B',
       date: '2023-07-30',
-      customerName: 'Leo',
+      customerName: 'Ravi',
       customerId: '124',
     }
     
@@ -54,17 +54,8 @@ const Dashboard = () => {
             <Box display="flex" justifyContent="space-between" alignItems="center">
               <Header title="Meeting Room Booking" />
               <Box>
-            <Button
-              sx={{
-                  backgroundColor: colors.blueAccent[700],
-                  color: colors.grey[100],
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                  padding: "10px 20px",
-                        }}
-                        >
-    <DownloadOutlinedIcon sx={{ mr: "2px" }} />
-  </Button>
+            
+  
 </Box>
 </Box>
 

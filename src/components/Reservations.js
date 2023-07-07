@@ -17,7 +17,6 @@ const Reservations = () => {
       <h2>Reservations</h2>
       <p>Small Conference Room</p>
       <DatePicker />
-      <button onClick={handlePrint}>Print</button>
       
     </div>
   );
