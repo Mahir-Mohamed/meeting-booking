@@ -71,7 +71,7 @@ const handleDelete = (userId) => {
 
   return (
 <ColorModeContext.Provider value={colorMode}>
-      {/* <ThemeProvider theme={theme1}> */}
+
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -166,7 +166,7 @@ const handleDelete = (userId) => {
     </Box>
           </main>
         </div>
-      {/* </ThemeProvider> */}
+
     </ColorModeContext.Provider>
 
   );

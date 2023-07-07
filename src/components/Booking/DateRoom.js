@@ -56,7 +56,7 @@ function DateRoom() {
   return (
     <>
 <ColorModeContext.Provider value={colorMode}>
-      {/* <ThemeProvider theme={theme1}> */}
+
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -157,7 +157,7 @@ function DateRoom() {
     </Box>
           </main>
         </div>
-      {/* </ThemeProvider> */}
+
     </ColorModeContext.Provider>
 
     </>

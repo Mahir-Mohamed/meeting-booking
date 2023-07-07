@@ -26,7 +26,7 @@ const Contacts = () => {
 
   return (
 <ColorModeContext.Provider value={colorMode}>
-      {/* <ThemeProvider theme={theme1}> */}
+
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -43,34 +43,7 @@ const Contacts = () => {
       <Box
         m="40px 0 0 0"
         height="75vh"
-        // sx={{
-        //   "& .MuiDataGrid-root": {
-        //     border: "none",
-        //   },
-        //   "& .MuiDataGrid-cell": {
-        //     borderBottom: "none",
-        //   },
-        //   "& .no-border-bottom": {
-        //     borderBottom: "none !important",
-        //   },
-        //   "& .MuiDataGrid-columnHeaders": {
-        //     backgroundColor: colors.blueAccent[400],
-        //     borderBottom: "none",
-        //   },
-        //   "& .MuiDataGrid-virtualScroller": {
-        //     backgroundColor: colors.primary[100],
-        //   },
-        //   "& .MuiDataGrid-footerContainer": {
-        //     borderTop: "none",
-        //     backgroundColor: colors.blueAccent[400],
-        //   },
-        //   "& .MuiCheckbox-root": {
-        //     color: `${colors.greenAccent[200]} !important`,
-        //   },
-        //   "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-        //     color: `${colors.grey[900]} !important`,
-        //   },
-        // }}
+        
       >
 
      <button onClick= {userFormHandler}>+ Add Room</button>
@@ -86,7 +59,7 @@ const Contacts = () => {
     </Box>
           </main>
         </div>
-      {/* </ThemeProvider> */}
+
     </ColorModeContext.Provider>
   );
 };

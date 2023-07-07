@@ -9,7 +9,7 @@ const Reservations = () => {
   };
 
   const handlePrint = () => {
-    // Logic for printing reservations for the selected date
+    
   };
 
   return (
@@ -18,7 +18,7 @@ const Reservations = () => {
       <p>Small Conference Room</p>
       <DatePicker />
       <button onClick={handlePrint}>Print</button>
-      {/* Display bookings for the selected date */}
+      
     </div>
   );
 };

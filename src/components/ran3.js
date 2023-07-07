@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-const Random2 = () => {
+const Random3 = () => {
   const [num, setNum] = useState(0);
 
   function randomNumberInRange(min, max) {
@@ -10,7 +10,7 @@ const Random2 = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setNum(randomNumberInRange(1, 100));
-    }, 5000); // 👈️ runs every 1 second
+    }, 5000); 
 
     return () => {
       clearInterval(interval);
@@ -19,9 +19,9 @@ const Random2 = () => {
 
   return (
     <div>
-      <h1>Bookings for today :  {num}</h1>
+      <h1>Total bookings made :  {num}</h1>
     </div>
   );
 };
 
-export default Random2;
+export default Random3;

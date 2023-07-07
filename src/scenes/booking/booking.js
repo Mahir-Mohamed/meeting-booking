@@ -27,17 +27,12 @@ const [theme1, colorMode] = useMode();
 
   const navigate = useNavigate();
 
-  // const userFormHandler = () =>{
-  //       navigate("/clientdetailsform")
-  // }
+
 
   const userFormHandler1 = () =>{
     navigate("/btnbook")
 }
 
-//   const dateRoomFormHandler = () =>{
-//     navigate("/dateroom")
-// }
 
 
 
@@ -80,7 +75,7 @@ const [theme1, colorMode] = useMode();
 
   return (
 <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme1}>
+
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -92,43 +87,15 @@ const [theme1, colorMode] = useMode();
       <Box
         m="40px 0 0 0"
         height="75vh"
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: colors.greenAccent[500],
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[200],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[100],
-          },
-          "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
-            backgroundColor: colors.blueAccent[500],
-          },
-          "& .MuiCheckbox-root": {
-            color: `${colors.greenAccent[500]} !important`,
-          },
-          "& .MuiDataGrid-row": {
-            borderBottom: "none",
-          },
-        }}
+      
       >
         <button  onClick= {userFormHandler1} >+Add booking</button>
-        {/* <button onClick= {dateRoomFormHandler}>Booking Details</button>
-        <button onClick= {userFormHandler}>Client Details</button> */}
+        
 
 <Box display="flex" justifyContent="space-between" p={2}>
       <Box
         display="flex"
-        backgroundColor={colors.greenAccent[300]}
+        backgroundColor={colors.grey[700]}
         borderRadius="3px"
       >
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
@@ -167,7 +134,7 @@ const [theme1, colorMode] = useMode();
     </Box>
           </main>
         </div>
-      </ThemeProvider>
+
     </ColorModeContext.Provider>
   );
 };

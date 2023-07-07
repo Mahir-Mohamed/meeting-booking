@@ -7,47 +7,10 @@ import { useGetUsersQuery } from "../API/rtkQueryApi"
 
   const {data, error} = useGetUsersQuery();
  console.log(data);
-  // {data.map((data) => {
-  //   return(
-  //     id : {data.id},
-  //     name:{data.name},
-  //     role :{data.role},
-  //     status:{data.status}
-  //   )
-  // };
+  
  }
  
-// const {data:getAllUsers,error,isLoading,isSuccess} = useGetAllUsersQuery();
 
-// return(
-//   {
-//     id: {getAllUsers.id},
-//     name: {getAllUsers.name},
-//     email: {getAllUsers.email},
-//     role: {getAllUsers.role},
-//     status: {getAllUsers.status},
-//   }
-//   },
-  
-//   {
-//     id: 3,
-//     name: "madhu",
-//     email: "madhu@gmail.com",
-//     age: "Active",
-//     phone: "1234567890",
-//     access: "user",
-//   },
-//   {
-//     id: 4,
-//     name: "Leo",
-//     email: "Leo@gmail.com",
-//     age: "In-Active",
-//     phone: "1234567890",
-//     access: "user",
-//   }
- 
-//  )
- 
 
 
 export const mockDataContacts = [
@@ -76,7 +39,7 @@ export const mockDataInvoices = [
     room: "Small Conference Room",
     date: "02/02/2023",
     cost: "200.00",
-    name: "Madhuraj",
+    name: "Mahir",
     status: "Confirmed",
   },
   {
@@ -84,7 +47,7 @@ export const mockDataInvoices = [
     room: "Large Conference Room",
     date: "02/03/2023",
     cost: "100.00",
-    name: "Leo",
+    name: "Ravi",
     status: "Confirmed",
   },
 ];
