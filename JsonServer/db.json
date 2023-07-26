@@ -1,35 +1,220 @@
 {
   "users": [
     {
-      "username": "Madhu",
-      "email": "leo@gmail.com",
+      "username": "Mahir",
+      "email": "rao@gmail.com",
       "role": "Admin",
       "status": "Active",
       "id": 2,
-      "name": "Leo"
+      "name": "Rao"
     },
     {
-      "username": "Leo",
-      "email": "leo@gmail.com",
-      "password": "leo@123",
+      "username": "Rocky",
+      "email": "rocky@gmail.com",
+      "password": "rocky45",
       "role": "user",
       "id": 3,
-      "status": "active",
-      "name": "madhu"
-    },
-    {
-      "name": "Virat",
-      "email": "Virat@gmail.com",
-      "role": "Admin",
       "status": "Active",
-      "id": 5
+      "name": "Rocky"
     },
     {
-      "name": "Leo123",
-      "email": "123@gmail.com",
-      "role": "user",
+      "name": "Viraj",
+      "email": "viraj@gmail.com",
+      "role": "Admin",
+      "status": "InActive",
+      "id": 5
+    }
+  ],
+  "rooms": [
+    {
+      "id": 2,
+      "title": "Medium Conference Room",
+      "capacity": "14",
+      "status": "Active",
+      "startTime": "2023-06-30T10:00:00",
+      "endTime": "2023-06-30T11:00:00",
+      "description": "It is a large conference room.",
+      "bookfor": [
+        "Multiple-days",
+        "Half-day",
+        "halfday"
+      ],
+      "image": "/medium.jpg",
+      "priceperday": "1500",
+      "bookingsCount": 0
+    },
+    {
+      "id": 3,
+      "title": "Large Conference Room",
+      "capacity": "22",
+      "status": "InActive",
+      "startTime": "2023-06-30T10:00:00",
+      "endTime": "2023-06-30T11:00:00",
+      "description": "",
+      "bookfor": [
+        "hour"
+      ],
+      "image": "/large.jpg",
+      "priceperday": "5000",
+      "bookingsCount": 0
+    },
+    {
+      "title": "Small Conference Room",
+      "capacity": "7",
+      "description": "It's a  small conference room with upto 6 members",
+      "bookfor": [
+        "hour"
+      ],
+      "image": "/small.jpg",
+      "priceperday": "100",
       "status": "active",
-      "id": 6
+      "id": 4,
+      "bookingsCount": 2
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "title": "Large Conference room",
+      "capacity": "10",
+      "status": "Confirmed",
+      "total": "$40",
+      "date": "2023-07-07",
+      "priceperday": "100",
+      "bookfor": "halfday",
+      "users": [
+        {
+          "name": "Ravi",
+          "phone": "1234567890",
+          "email": "ravi@gmail.com",
+          "address": "Banshankari",
+          "company": "Lucida Technology Pvt Ltd",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": "500072"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Small Conference room",
+      "capacity": "22",
+      "status": "Pending",
+      "total": "$123.11",
+      "date": "2023-07-05",
+      "priceperday": "1000",
+      "bookfor": "Multiple Days",
+      "users": [
+        {
+          "name": "Vishal",
+          "phone": "9123456780",
+          "email": "vishal@gmail.com",
+          "address": "Banshankari",
+          "company": "Lucida Tech",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": "500072"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Small Conference Room",
+      "capacity": "20",
+      "status": "Cancelled",
+      "total": "$450",
+      "date": "2023-07-22",
+      "priceperday": "500",
+      "bookfor": "hour",
+      "users": [
+        {
+          "name": "Mohit",
+          "phone": "1234509876",
+          "email": "mohit@gmail.com",
+          "address": "Banshankari",
+          "company": "Lucida",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": "500072"
+        }
+      ]
+    },
+    {
+      "title": "Small Conference Room",
+      "date": "2023-07-01",
+      "capacity": "8 People",
+      "total": "89.00 per hour",
+      "bookfor": "Half day",
+      "priceperday": "89.00 per hour",
+      "status": "Active",
+      "users": [
+        {
+          "name": "Ajay",
+          "phone": "1234567890",
+          "email": "ajay@gmail.com",
+          "address": "Banasankari",
+          "company": "Lucida",
+          "city": "Banaglore",
+          "state": "Karnataka",
+          "country": "India",
+          "zip": "571234"
+        }
+      ],
+      "id": 4
+    }
+  ],
+  "userBookings": [
+    {
+      "id": 1,
+      "roomName": "Small Conference Room",
+      "capacity": "8 People",
+      "price": [
+        "89.00 per hour",
+        "2000 half day"
+      ],
+      "image": "/small.jpg",
+      "description": [
+        "This workspace gives business and mobile travellers privacy to work undistrubed",
+        " Super fast wi-fi",
+        " Printer supplied",
+        "For wheelchair users, alternate facilities available."
+      ]
+    },
+    {
+      "id": 2,
+      "roomName": "Large Conference Room",
+      "capacity": "30 People",
+      "price": [
+        "150.00 per hour",
+        "10000 per day"
+      ],
+      "image": "/large.jpg",
+      "description": [
+        "This workspace gives business and mobile travellers privacy to work undisturbed",
+        " Super fast wi-fi",
+        " Printer supplied",
+        "Power station to recharge laptop",
+        "For wheelchair users, alternate facilities available."
+      ]
+    },
+    {
+      "id": 3,
+      "roomName": "Panoramic  Room",
+      "capacity": "15 People",
+      "price": [
+        "180.00 per hour",
+        "700 per day"
+      ],
+      "image": "/medium.jpg",
+      "description": [
+        "Situated in an instantly recognized address. a short walk from Westminstethese service offices are imposing. Accessable from Charing Cross Station, they are perfect for business needing access. Break out areas  to brainstrom ideas. Major transport links making it perfect if you travel.",
+        "Width: 7.85mm",
+        "Length: 6.9m",
+        "Total floor space: 76m"
+      ]
     }
   ]
 }

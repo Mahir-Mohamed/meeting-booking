@@ -53,7 +53,7 @@ const handleSearch = (event) => {
 };
 
 filteredUsers = filteredUsers?.filter((response) =>
-        response.name.includes(searchUser)
+        response.name.toLowerCase().includes(searchUser.toLowerCase())
     )
 
 if (selectedStatus !== 'All') {
@@ -71,7 +71,6 @@ const handleDelete = (userId) => {
 
   return (
 <ColorModeContext.Provider value={colorMode}>
-
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -89,7 +88,7 @@ const handleDelete = (userId) => {
          {successMessage && <div>{successMessage}</div>}
                     <div>
                         <button type="button"  className='btn btn-primary' onClick={userFormHandler}><i className='fa fa-plus' ></i> +Add Users</button>
-                        <br /><br /><br />
+                        <br /><br />
                         <Box>
                         <input className="search ms-5 p-2 rounded"
                             type="text"
@@ -100,21 +99,24 @@ const handleDelete = (userId) => {
                         </Box>
                     </div>
                     <Box
-                    m="40px 0 0 0"
-                    height="5vh"
-                    display="flex"  alignItems="center"
+                    m="20px 0 0 0"
+                    height="4vh"
+                    display="-ms-grid"  
+                    alignItems="flex-start"
                     >
                     <button
                             type="button"
                             className={`rounded ${selectedStatus === 'All' ? 'active' : ''}`}
                             onClick={() => handleStatusChange('All')}> All
                         </button>
+                        &nbsp; &nbsp; &nbsp; 
                         <button
                             type="button"
                             className={`rounded ${selectedStatus === 'Active' ? 'active' : ''}`}
                             onClick={() => handleStatusChange('Active')}>
                             Active
                         </button>
+                        &nbsp; &nbsp; &nbsp; 
                         <button
                             type="button"
                             className={`rounded ${selectedStatus === 'InActive' ? 'active' : ''}`}
@@ -122,7 +124,7 @@ const handleDelete = (userId) => {
                                 InActive
                         </button>  
                         </Box>
-
+<br />
                     <div>
                         {filteredUsers?.length === 0 ? (
                             <div>No data found.</div>
@@ -146,7 +148,6 @@ const handleDelete = (userId) => {
                                             <td>{user.status}</td>
                                             <td>
                                             <ModeEditOutlineRoundedIcon
-                                        color="secondary"
                                         onClick={() => navigateToEditUser(user)}
                                            sx={{ mr: 2, cursor: "pointer" }}
                                              />
@@ -166,7 +167,6 @@ const handleDelete = (userId) => {
     </Box>
           </main>
         </div>
-
     </ColorModeContext.Provider>
 
   );

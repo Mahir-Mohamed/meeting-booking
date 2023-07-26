@@ -9,9 +9,15 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
+import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import { Logout, Room, RoomPreferencesRounded } from '@mui/icons-material';
 
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -60,7 +66,7 @@ const Sidebar = () => {
     >
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
-
+          {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
@@ -76,8 +82,8 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h4" color={colors.grey[100]}>
-                  Dashboard
+                <Typography variant="h6" color={colors.grey[100]}>
+                  DASHBOARD
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -86,7 +92,7 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
-          
+         
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="Home"
@@ -96,7 +102,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            
+        
             <Item
               title="Booking"
               to="/invoices"
@@ -107,7 +113,7 @@ const Sidebar = () => {
             <Item
               title="Rooms"
               to="/contacts"
-              icon={<ContactsOutlinedIcon />}
+              icon={<RoomPreferencesRounded />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -123,7 +129,7 @@ const Sidebar = () => {
             <Item
               title="LogOut"
               to="/"
-              icon={<MapOutlinedIcon />}
+              icon={<Logout />}  
               selected={selected}
               setSelected={setSelected}
             /> 

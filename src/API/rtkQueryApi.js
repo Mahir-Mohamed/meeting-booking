@@ -27,6 +27,55 @@ export const rtkQueryApi = createApi({
                 method: 'DELETE',
             })
         }),
+        rooms: builder.query({
+            query: () => '/rooms'
+        }),
+        addRooms: builder.mutation({
+            query: (room) => ({
+                url: "/rooms",
+                method: "POST",
+                body: room,
+            })
+        }),
+        editRoom: builder.mutation({
+            query: (room) => ({
+                url: `/rooms/${room.id}`,
+                method: 'PUT',
+                body: room
+            })
+        }),
+        deleteRoom: builder.mutation({
+            query: (id) => ({
+                url: `/rooms/${id}`,
+                method: 'DELETE',
+            })
+        }),
+        bookings: builder.query({
+            query: () => "/bookings"
+        }),
+        addbooking: builder.mutation({
+            query: (booking) => ({
+                url: "/bookings",
+                method: "POST",
+                body: booking,
+            })
+        }),
+        editbooking: builder.mutation({
+            query: (booking) => ({
+                url: `/bookings/${booking.id}`,
+                method: 'PUT',
+                body: booking
+            })
+        }),
+        deleteBooking: builder.mutation({
+            query: (id) => ({
+                url: `/bookings/${id}`,
+                method: 'DELETE',
+            })
+        }),
+        getRoomBookings: builder.query ({
+            query:() => "/userBookings"
+        })
     
     })
 })
@@ -34,5 +83,14 @@ export const rtkQueryApi = createApi({
 export const { useGetUsersQuery,
 useAddUsersMutation,
 useEditUserMutation,
-useDeleteUserMutation,
+useDeleteUserMutation, 
+useRoomsQuery, 
+useAddRoomsMutation,
+useEditRoomMutation,
+useDeleteRoomMutation,
+useBookingsQuery,
+useAddbookingMutation,
+useEditbookingMutation,
+useDeleteBookingMutation,
+useGetRoomBookingsQuery,
 } = rtkQueryApi

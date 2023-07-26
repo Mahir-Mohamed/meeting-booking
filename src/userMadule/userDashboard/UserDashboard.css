@@ -1,0 +1,30 @@
+.header {
+    background: #9ab7d4;
+    height: 72px;
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .form-control {
+    display: block;
+    width: 30%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1;
+    color: #212529;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+  }
+  
+ .row-2{
+  text-align: center;
+
+ }

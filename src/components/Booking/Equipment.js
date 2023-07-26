@@ -50,7 +50,7 @@ function Equipment() {
      () => [
        {
          Header: 'Title',
-         accessor: 'col1', 
+         accessor: 'col1', // accessor is the "key" in the data
        },
        {
          Header: 'Unit(s)',
@@ -58,11 +58,11 @@ function Equipment() {
        },
        {
          Header: 'Price',
-         accessor: 'col3', 
+         accessor: 'col3', // accessor is the "key" in the data
        },
        {
         Header: '',
-        accessor: 'col4',
+        accessor: 'col4', // accessor is the "key" in the data
       },
      ],
      []

@@ -4,79 +4,54 @@ import { ColorModeContext, useMode } from "../../theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Sidebar from "../../scenes/global/Sidebar";
 import { Box, Typography, useTheme } from "@mui/material";
-import { useAddRoomsMutation } from '../../API/rtkQueryApi';
-import { useNavigate } from "react-router-dom";
+import { useEditRoomMutation } from '../../API/rtkQueryApi';
+import { useLocation } from "react-router-dom";
 
-function MeetingRoom() {
+
+function EditMeetingRoom() {
 
   const [theme1, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
 
-  const [addRooms, error, isLoading] = useAddRoomsMutation()
-  const [successMessage, setSuccessMessage] = useState("");
-  const navigate = useNavigate();
+  const [editroom, { isLoading }] = useEditRoomMutation();
+  const location = useLocation();
+  const { room } = location.state;
 
 
-    const [title, setTitle] = useState('');
-    const [capacity, setCapacity] = useState('');
-    const [description, setDescription] = useState('');
-    const [bookfor, setBookFor] = useState([]);
-    const [priceperday, setPricePerDay] = useState('');
+    const [title, setTitle] = useState(room?.title);
+    const [capacity, setCapacity] = useState(room?.capacity);
+    const [description, setDescription] = useState(room?.description);
+    const [bookfor, setBookFor] = useState(room.bookfor || []);
+    const [priceperday, setPricePerDay] = useState(room?.priceperday);
+    const [status, setStatus] = useState(room?.status);
     const [selectedImage, setSelectedImage] = useState(null);
 
-    const [status, setStatus] = useState('');
 
-  const onSubmitHandler = async (event) => {
+const onSubmitHandler = (event) => {
     event.preventDefault();
+    const updatedRoom = {  ...room, title, capacity, description, bookfor, priceperday, status,
+      image: selectedImage ? URL.createObjectURL(selectedImage) : room.image, };
+    editroom(updatedRoom).unwrap().then((response) => {
+        window.location.reload();
+    })
 
-    let image = null;
-    if (selectedImage) {
-        const reader = new FileReader();
-        reader.onload = () => {
-            image = reader.result;
-            saveRoomWithImage(image);
-        };
-        reader.readAsDataURL(selectedImage);
+}
+const handleCheckboxChange = (event) => {
+    const optionValue = event.target.value;
+    if (event.target.checked) {
+        setBookFor([...bookfor, optionValue]);
     } else {
-        saveRoomWithImage(image);
+        setBookFor(bookfor.filter((option) => option !== optionValue));
     }
 };
-
-const saveRoomWithImage = (image) => {
-    const newRoom = {
-        title,
-        capacity: parseInt(capacity),
-        description,
-        bookfor,
-        priceperday,
-        status,
-        image,
-    };
-
-    addRooms(newRoom).unwrap().then((res) => {
-            window.location.reload();
-        });
-};
-
-const handleCheckboxChange = (event) => {
-  const value = event.target.value;
-  if (event.target.checked) {
-      setBookFor((prevSelectedOptions) => [...prevSelectedOptions, value]);
-  } else {
-      setBookFor((prevSelectedOptions) =>
-          prevSelectedOptions.filter((option) => option !== value)
-      );
-  }
-};
-
 const handleImageChange = (e) => {
   const file = e.target.files[0];
   setSelectedImage(file);
 };
-
   return (
     <>
 <ColorModeContext.Provider value={colorMode}>
+      {/* <ThemeProvider theme={theme1}> */}
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -90,16 +65,14 @@ const handleImageChange = (e) => {
           <label htmlFor="title" className="form-label">Title</label>
           <input className="form-control" name="title" value={title} onChange={(event) => setTitle(event.target.value)} />
         </div>
-        
-        <div className="form-group">
-                                <label className="form-label">Image</label>
+        <div className="col-2 mb-4">
+                                <label className="fs-5">Image</label>
                             </div>
-                            <div className="form-control">
-                                <input
-                                    type="file"
-                                    accept="/*"
-                                    onChange={handleImageChange}
-                                />
+                            <div className="col-10 mb-4">
+                                {room.image && (
+                                    <img src={room.image} alt="Room" className="img-fluid" width={"200px"} style={{ marginBottom: '10px' }}/>
+                                )}
+                                <input type="file" onChange={handleImageChange} accept="image/*" className="mx-4" />
                             </div>
         <div className="form-group">
           <label htmlFor="capacity" className="form-label">Capacity</label>
@@ -141,7 +114,7 @@ const handleImageChange = (e) => {
           <input className="form-control" name="status" value={status} onChange={(event) => setStatus(event.target.value)} />
         </div>        
         <div className="form-group">
-          <button className="btn" onClick={onSubmitHandler} >Save</button> 
+          <button className="btn" onClick={onSubmitHandler} >Update</button> 
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <button className="btn" type="clear" >Clear</button>
         </div>
@@ -150,10 +123,11 @@ const handleImageChange = (e) => {
     </Box>
           </main>
         </div>
+      {/* </ThemeProvider> */}
     </ColorModeContext.Provider>
 
     </>
   );
 }
 
-export default MeetingRoom;
+export default EditMeetingRoom;

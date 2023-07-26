@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -15,9 +14,9 @@ import Sidebar from "../global/Sidebar";
 import QuickLinks from "../../components/QuickLinks"
 import Reservations from "../../components/Reservations"
 import LatestBookings from "../../components/LatestBookings"
-import Random1 from '../../components/ran1';
-import Random3 from '../../components/ran3';
-import Random2 from '../../components/ran2';
+import Random1 from '../../components/Random1';
+import Random3 from '../../components/Random3';
+import Random2 from '../../components/Random2';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -29,24 +28,7 @@ const Dashboard = () => {
   const currDate = new Date().toLocaleDateString();
  const currTime = new Date().toLocaleTimeString();
 
-  const todayBookings = 10; 
-  const totalBookings = 100; 
-  const latestBookings = [
-    {
-      meetingRoom: 'Room A',
-      date: '2023-06-30',
-      customerName: 'Mahir',
-      customerId: '123',
-    },
-    {
-      meetingRoom: 'Room B',
-      date: '2023-07-30',
-      customerName: 'Ravi',
-      customerId: '124',
-    }
-    
-    
-  ];
+ 
 
   return (
     <>
@@ -54,14 +36,12 @@ const Dashboard = () => {
             <Box display="flex" justifyContent="space-between" alignItems="center">
               <Header title="Meeting Room Booking" />
               <Box>
-            
-  
+        
 </Box>
 </Box>
 
 
 <ColorModeContext.Provider value={colorMode}>
-
         <CssBaseline />
         <div className="app">
           <main className="content" style={{ display: "flex" }}>
@@ -77,14 +57,14 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 1"
-          
+          backgroundColor={colors.blueAccent[900]}
           padding="30px"
         >
           <Typography
             variant="h9"
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
-          >
+            >
           </Typography>
           <Box height="240px">
             <Random1 />
@@ -93,7 +73,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 1"
-          
+          backgroundColor={colors.blueAccent[900]}
           padding="30px"
         >
           <Typography
@@ -109,7 +89,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 1"
-          
+          backgroundColor={colors.blueAccent[900]}
           padding="30px"
         >
           <Typography
@@ -124,25 +104,23 @@ const Dashboard = () => {
         </Box>
         <Box
           gridColumn="span 4"
-          gridRow="span 2"
-          
+          gridRow="span 3"
           padding="30px"
         >
           <Typography
-            variant="h9"
+            variant="h10"
             fontWeight="600"
-            sx={{ marginBottom: "15px" }}
+            sx={{ marginBottom: "100px" }}
           >
           </Typography>
           <Box height="240px">
-            <LatestBookings bookings={latestBookings} />
+            <LatestBookings />
             </Box>
         </Box>
 
         <Box
           gridColumn="span 4"
-          gridRow="span 2"
-          
+          gridRow="span 3"
         >
           <Typography
             variant="h5"
@@ -156,8 +134,7 @@ const Dashboard = () => {
         </Box>
         <Box
           gridColumn="span 4"
-          gridRow="span 2"
-          
+          gridRow="span 3"
           padding="30px"
         >
           <Typography
@@ -170,51 +147,10 @@ const Dashboard = () => {
           <QuickLinks />        
             </Box>
         </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          
-          padding="30px"
-        >
-          <Typography
-            variant="h9"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-          </Typography>
-          <Box height="240px">
-            </Box>
         </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          
-          padding="30px"
-        >
-          <Typography
-            variant="h9"
-            fontWeight="600"
-            sx={{ marginBottom: "15px" }}
-          >
-          </Typography>
-          <Box height="240px">
-          </Box>
-        </Box>
-
-        <Box 
-        gridRow="span 1"
-        fontWeight="700"
-        alignItems="end"
-        height="5000px" mt="50px"
-        >
-        <p>{currTime}</p>
-         <p>{currDate}</p>
-         </Box>   
-      </Box>
     </Box>
           </main>
         </div>
-     
     </ColorModeContext.Provider>
     </Box>
 

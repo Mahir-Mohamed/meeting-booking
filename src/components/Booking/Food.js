@@ -56,7 +56,7 @@ function Food() {
      () => [
        {
          Header: 'Title',
-         accessor: 'col1', 
+         accessor: 'col1', // accessor is the "key" in the data
        },
        {
          Header: 'People',
@@ -64,11 +64,11 @@ function Food() {
        },
        {
          Header: 'Price',
-         accessor: 'col3', 
+         accessor: 'col3', // accessor is the "key" in the data
        },
        {
         Header: '',
-        accessor: 'col4', 
+        accessor: 'col4', // accessor is the "key" in the data
       },
      ],
      []
